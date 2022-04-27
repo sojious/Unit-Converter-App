@@ -51,6 +51,6 @@ object ConversionData {
         ConversionItem(
             12,
             "Currency"
-        ),
+        )
     )
 }
