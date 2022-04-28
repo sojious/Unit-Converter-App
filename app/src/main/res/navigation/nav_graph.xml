@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.unitconverter.ui.splashScreen.SplashScreenFragment"
+        android:label="SplashScreenFragment" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_welcomeScreenFragment"
+            app:destination="@id/welcomeScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeScreenFragment"
+        android:name="com.example.unitconverter.ui.welcomeScreen.WelcomeScreenFragment"
+        android:label="WelcomeScreenFragment" >
+        <action
+            android:id="@+id/action_welcomeScreenFragment_to_conversionScreenFragment"
+            app:destination="@id/conversionScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/conversionScreenFragment"
+        android:name="com.example.unitconverter.ui.conversionScreen.ConversionScreenFragment"
+        android:label="ConversionScreenFragment" />
+</navigation>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Unit Converter</string>
+    <string name="sample">Sample</string>
+    <string name="welcome_statement">Welcome,\nwhat do you\nwant to\nconvert?</string>
+</resources>
