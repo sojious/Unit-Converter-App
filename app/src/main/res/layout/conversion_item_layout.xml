@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/dimen_conversion_width"
     android:layout_height="@dimen/dimen_conversion_height"
-    android:background="@drawable/rectangle_conversion"
+    android:background="@drawable/bordered_ripple_black"
     android:id="@+id/ConversionItemParent"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
