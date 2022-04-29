@@ -6,5 +6,5 @@ import androidx.fragment.app.Fragment
 
 class ConversionScreenFragment : Fragment(){
 
-    
+
 }
