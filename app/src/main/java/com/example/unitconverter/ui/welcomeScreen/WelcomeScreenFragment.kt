@@ -3,7 +3,9 @@ package com.example.unitconverter.ui.welcomeScreen
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unitconverter.R
@@ -14,7 +16,7 @@ import com.example.unitconverter.model.ConversionItem
 import com.example.unitconverter.util.WelcomeScreenConversionInterface
 
 class WelcomeScreenFragment : Fragment(R.layout.fragment_welcome_screen),
-WelcomeScreenConversionInterface{
+    WelcomeScreenConversionInterface {
     private lateinit var binding: FragmentWelcomeScreenBinding
     private lateinit var conversionAdapter: WelcomeScreenConversionsAdapter
     private lateinit var items: List<ConversionItem>
@@ -37,5 +39,10 @@ WelcomeScreenConversionInterface{
 
     override fun goToConversionScreen(id: Int) {
         Toast.makeText(activity, "You clicked on $id", Toast.LENGTH_SHORT).show()
+        val idBundle = bundleOf("conversionId" to id)
+        findNavController().navigate(
+            R.id.action_welcomeScreenFragment_to_conversionScreenFragment,
+            idBundle
+        )
     }
 }
