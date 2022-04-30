@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/conversion_item_layout.xml" value="0.1" />
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/fragment_conversion_screen.xml" value="0.1" />
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/fragment_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/fragment_welcome_screen.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bordered_ripple_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/borderless_ripple_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rectangle_conversion.xml" value="0.1" />

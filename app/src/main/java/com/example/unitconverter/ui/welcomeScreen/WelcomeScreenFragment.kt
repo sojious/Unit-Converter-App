@@ -41,8 +41,9 @@ class WelcomeScreenFragment : Fragment(R.layout.fragment_welcome_screen),
         Toast.makeText(activity, "You clicked on $id", Toast.LENGTH_SHORT).show()
         val idBundle = bundleOf("conversionId" to id)
         findNavController().navigate(
-            R.id.action_welcomeScreenFragment_to_conversionScreenFragment,
-            idBundle
+            R.id.action_welcomeScreenFragment_to_conversionScreenFragment
         )
     }
+
+
 }
