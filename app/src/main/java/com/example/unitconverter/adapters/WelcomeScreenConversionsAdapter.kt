@@ -5,30 +5,25 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
 import com.example.unitconverter.R
 import com.example.unitconverter.databinding.ConversionItemLayoutBinding
 import com.example.unitconverter.model.ConversionItem
-import com.example.unitconverter.util.InterfaceWelcomeScreenConversion
+import com.example.unitconverter.util.WelcomeScreenConversionInterface
 
-class WelcomeScreenConversionsAdapter :
+class WelcomeScreenConversionsAdapter(
+    private var clickInterface: WelcomeScreenConversionInterface
+) :
     ListAdapter<ConversionItem, WelcomeScreenConversionsAdapter.ViewHolder>(
         DiffCallback()
     ) {
 
     class ViewHolder(
-        private val binding: ConversionItemLayoutBinding
+        private val binding: ConversionItemLayoutBinding,
+        private val clickInterface: WelcomeScreenConversionInterface
     ) : RecyclerView.ViewHolder(binding.root) {
-        init {
-            binding.root.setOnClickListener { view ->
-                //todo go to ConversionScreen
-            }
-        }
 
         fun bind(conversionItem: ConversionItem) {
-            with(binding) {
-                binding.ConversionItemName.text = conversionItem.conversionName
-            }
+            binding.ConversionItemName.text = conversionItem.conversionName
         }
     }
 
@@ -48,13 +43,19 @@ class WelcomeScreenConversionsAdapter :
         return ViewHolder(
             ConversionItemLayoutBinding.inflate(
                 LayoutInflater.from(parent.context),
-                parent.findViewById(R.id.ConversionItemParent),
+                parent,
                 false
-            )
+            ),
+            clickInterface
         )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        with(holder) {
+            bind(getItem(position))
+            itemView.setOnClickListener {
+                clickInterface.goToConversionScreen(position)
+            }
+        }
     }
 }

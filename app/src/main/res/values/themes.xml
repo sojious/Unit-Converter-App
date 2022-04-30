@@ -3,7 +3,7 @@
     <style name="Theme.UnitConverter" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/local_yellow_bright</item>
-        <item name="colorPrimaryVariant">@color/local_yellow_dull</item>
+        <item name="colorPrimaryVariant">@color/local_black_dull</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/local_red</item>
