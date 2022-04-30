@@ -18,10 +18,18 @@
         android:label="WelcomeScreenFragment" >
         <action
             android:id="@+id/action_welcomeScreenFragment_to_conversionScreenFragment"
-            app:destination="@id/conversionScreenFragment" />
+            app:destination="@id/conversionScreenFragment">
+        </action>
+        <argument
+            android:name="conversion_id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/conversionScreenFragment"
         android:name="com.example.unitconverter.ui.conversionScreen.ConversionScreenFragment"
-        android:label="ConversionScreenFragment" />
+        android:label="ConversionScreenFragment" >
+        <argument
+            android:name="conversion_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

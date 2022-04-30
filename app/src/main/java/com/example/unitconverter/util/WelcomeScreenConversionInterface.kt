@@ -1,5 +1,5 @@
 package com.example.unitconverter.util
 
-interface InterfaceWelcomeScreenConversion {
+interface WelcomeScreenConversionInterface {
     fun goToConversionScreen(id: Int)
 }

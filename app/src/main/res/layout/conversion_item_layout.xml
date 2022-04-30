@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/dimen_conversion_item"
+    android:layout_width="@dimen/dimen_conversion_width"
     android:layout_height="@dimen/dimen_conversion_height"
-    android:background="@drawable/rectangle_conversion"
+    android:background="@drawable/bordered_ripple_black"
     android:id="@+id/ConversionItemParent"
     android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
     >
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/ConversionItemName"
