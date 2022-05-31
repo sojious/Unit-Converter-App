@@ -15,11 +15,6 @@ class SplashScreenFragment : Fragment(R.layout.fragment_splash_screen) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSplashScreenBinding.bind(view)
-        goToWelcomeScreen()
     }
 
-    private fun goToWelcomeScreen() {
-        findNavController()
-            .navigate(R.id.action_splashScreenFragment_to_welcomeScreenFragment)
-    }
 }
