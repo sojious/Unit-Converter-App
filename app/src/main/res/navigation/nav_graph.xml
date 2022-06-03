@@ -2,16 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/welcomeScreenFragment">
 
-    <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="com.example.unitconverter.ui.splashScreen.SplashScreenFragment"
-        android:label="SplashScreenFragment" >
-        <action
-            android:id="@+id/action_splashScreenFragment_to_welcomeScreenFragment"
-            app:destination="@id/welcomeScreenFragment" />
-    </fragment>
     <fragment
         android:id="@+id/welcomeScreenFragment"
         android:name="com.example.unitconverter.ui.welcomeScreen.WelcomeScreenFragment"

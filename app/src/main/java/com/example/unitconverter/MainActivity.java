@@ -16,24 +16,30 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // change the the application theme to be used for other displaying other screens other than the splash screen
+        setTheme(R.style.Theme_UnitConverter);
+
         super.onCreate(savedInstanceState);
+
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         NavHostFragment navHostFragment =
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_container);
 
+        //show the status bar
         hideSystemBars();
 
     }
 
     private void hideSystemBars() {
         WindowInsetsControllerCompat controllerCompat =
-        ViewCompat.getWindowInsetsController(getWindow().getDecorView());
+        ViewCompat.getWindowInsetsController(findViewById(R.id.nav_host_fragment_container));
         if(controllerCompat == null) return;
         controllerCompat.setSystemBarsBehavior(
                 WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         );
-        controllerCompat.hide(WindowInsetsCompat.Type.systemBars());
+        controllerCompat.show(WindowInsetsCompat.Type.statusBars());
     }
 }
