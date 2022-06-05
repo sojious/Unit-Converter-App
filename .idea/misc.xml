@@ -7,19 +7,12 @@
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/drawable/borderless_ripple_black.xml" value="0.147" />
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/drawable/button.xml" value="0.147" />
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/activity_splash_screen.xml" value="0.19270833333333334" />
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/conversion_item_layout.xml" value="0.1" />
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/fragment_conversion_button.xml" value="0.4083333333333333" />
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/fragment_conversion_screen.xml" value="0.22" />
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/fragment_splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/fragment_welcome_screen.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Unit-Converter-App/app/src/main/res/drawable/background_gradient.xml" value="0.1125" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Unit-Converter-App/app/src/main/res/drawable/ic_stopwatch.xml" value="0.1125" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Unit-Converter-App/app/src/main/res/drawable/splash_background.xml" value="0.1125" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Unit-Converter-App/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Unit-Converter-App/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Unit-Converter-App/app/src/main/res/layout/fragment_conversion_screen.xml" value="0.12771739130434784" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Unit-Converter-App/app/src/main/res/layout/fragment_splash_screen.xml" value="0.12771739130434784" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Unit-Converter-App/app/src/main/res/layout/fragment_welcome_screen.xml" value="0.12771739130434784" />
         <entry key="app/src/main/res/drawable/bordered_ripple_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/borderless_ripple_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rectangle_conversion.xml" value="0.1" />

@@ -15,7 +15,8 @@
 
 
     <string name="clear">AC</string>
-    <string name="exponent">^</string>
+    <string name="editText1">0.000</string>
+    <string name="editText2">0.000</string>
     <string name="parentheses">()</string>
     <string name="divide">/</string>
     <string name="multiply">x</string>

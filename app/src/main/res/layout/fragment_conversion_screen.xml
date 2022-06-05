@@ -47,15 +47,18 @@
                 android:orientation="horizontal">
 
                 <EditText
+                    android:id="@+id/editText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text= "34.6"
                     android:layout_marginTop="10dp"
-                    android:textSize="35sp"
-                    android:id="@+id/editText1"
-                    android:textStyle="bold"
+                    android:background="@null"
+                    android:minHeight="48dp"
+                    android:text="@string/editText1"
                     android:textColor="@color/white"
-                    android:background="@null"/>
+                    android:cursorVisible="true"
+                    android:textCursorDrawable="@color/local_yellow_bright"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -118,15 +121,16 @@
                 app:layout_constraintTop_toBottomOf="@id/text2">
 
                 <EditText
+                    android:id="@+id/editText2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text= "128.6"
                     android:layout_marginTop="10dp"
-                    android:textSize="35sp"
-                    android:textStyle="bold"
-                    android:id="@+id/editText2"
+                    android:background="@null"
+                    android:minHeight="48dp"
+                    android:text="@string/editText2"
                     android:textColor="@color/black"
-                    android:background="@null"/>
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -171,19 +175,21 @@
             android:id="@+id/customButtonLayout"
             android:background="@color/black"
             android:layout_weight="1">
+
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/seven"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:text="@string/seven"
-                app:layout_constraintBottom_toTopOf="@id/four"
-                app:layout_constraintVertical_chainStyle="packed"
-                android:textColor="@color/white"
-                android:id="@+id/seven"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintEnd_toStartOf="@id/eight"
                 android:background="@drawable/button"
-               app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:onClick="seven"
+                android:text="@string/seven"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/four"
+                app:layout_constraintEnd_toStartOf="@id/eight"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="0dp"
                 android:layout_height="0dp"
