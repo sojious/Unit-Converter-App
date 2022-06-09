@@ -15,12 +15,19 @@
         <entry key="..\:/Users/SONY/AndroidStudioProjects/UnitConverter/app/src/main/res/layout/fragment_welcome_screen.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bordered_ripple_black.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/borderless_ripple_black.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/button.xml" value="0.2005" />
+        <entry key="app/src/main/res/drawable/drawable_keyboard_ripple.xml" value="0.2005" />
+        <entry key="app/src/main/res/drawable/ic_stopwatch.xml" value="0.1365" />
         <entry key="app/src/main/res/drawable/rectangle_conversion.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rectangle_welcome_screen_recycler_view.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/splash_background.xml" value="0.1365" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/conversion_item_layout.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_conversion_screen.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_welcome_screen.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/keyboard_layout.xml" value="0.18" />
         <entry key="app/src/main/res/layout/welcome_screen_layout.xml" value="0.19270833333333334" />
       </map>
     </option>

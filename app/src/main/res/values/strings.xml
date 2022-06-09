@@ -27,4 +27,13 @@
     <string name="equals">=</string>
 
     <string name="backspace"> </string>
+    <string name="tap_to_change_value">Tap to change value</string>
+    <string name="_0_00">0.00</string>
+    <string name="m">m</string>
+
+
+    <string-array name="currencies">
+        <item>Currency 1</item>
+        <item>Currency 2</item>
+    </string-array>
 </resources>

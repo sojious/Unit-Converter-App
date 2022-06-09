@@ -1,43 +1,25 @@
 package com.example.unitconverter.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.unitconverter.R
+import com.example.unitconverter.data.ConversionData
 import com.example.unitconverter.databinding.ConversionItemLayoutBinding
 import com.example.unitconverter.model.ConversionItem
 import com.example.unitconverter.util.WelcomeScreenConversionInterface
+import com.google.android.material.textview.MaterialTextView
 
 class WelcomeScreenConversionsAdapter(
-    private var clickInterface: WelcomeScreenConversionInterface
+    private val items: List<ConversionItem>,
+    val callback: (ConversionItem) -> Unit
 ) :
-    ListAdapter<ConversionItem, WelcomeScreenConversionsAdapter.ViewHolder>(
-        DiffCallback()
-    ) {
-
-    class ViewHolder(
-        private val binding: ConversionItemLayoutBinding,
-        private val clickInterface: WelcomeScreenConversionInterface
-    ) : RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(conversionItem: ConversionItem) {
-            binding.ConversionItemName.text = conversionItem.conversionName
-        }
-    }
-
-
-    private class DiffCallback : DiffUtil.ItemCallback<ConversionItem>() {
-        override fun areItemsTheSame(oldItem: ConversionItem, newItem: ConversionItem): Boolean {
-            return oldItem == newItem
-        }
-
-        override fun areContentsTheSame(oldItem: ConversionItem, newItem: ConversionItem): Boolean {
-            return oldItem.conversionName == newItem.conversionName
-        }
-
-    }
+    RecyclerView.Adapter<WelcomeScreenConversionsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -45,17 +27,30 @@ class WelcomeScreenConversionsAdapter(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            ),
-            clickInterface
+            )
         )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
-            bind(getItem(position))
-            itemView.setOnClickListener {
-                clickInterface.goToConversionScreen(position)
-            }
+            bind(items[position])
         }
     }
+
+
+    inner class ViewHolder(
+        val binding: ConversionItemLayoutBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(conversionItem: ConversionItem) {
+            binding.ConversionItemName.text = conversionItem.conversionName
+            itemView.setOnClickListener { callback(conversionItem) }
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return items.size
+    }
+
+
 }

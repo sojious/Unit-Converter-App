@@ -12,7 +12,7 @@ import com.example.unitconverter.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    private ActivityMainBinding binding = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +28,24 @@ public class MainActivity extends AppCompatActivity {
         NavHostFragment navHostFragment =
                 (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_container);
 
-        //show the status bar
+        //hide the status bar
         hideSystemBars();
 
     }
 
+    @Override
+    protected void onDestroy() {
+        binding = null;
+        super.onDestroy();
+    }
+
     private void hideSystemBars() {
         WindowInsetsControllerCompat controllerCompat =
-        ViewCompat.getWindowInsetsController(findViewById(R.id.nav_host_fragment_container));
-        if(controllerCompat == null) return;
+                ViewCompat.getWindowInsetsController(findViewById(R.id.nav_host_fragment_container));
+        if (controllerCompat == null) return;
         controllerCompat.setSystemBarsBehavior(
                 WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         );
-        controllerCompat.show(WindowInsetsCompat.Type.statusBars());
+        controllerCompat.hide(WindowInsetsCompat.Type.statusBars());
     }
 }

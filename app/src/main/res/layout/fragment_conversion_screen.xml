@@ -1,351 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/TopConversionLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="380dp"
+        android:layout_gravity="top"
         android:orientation="vertical"
-        android:weightSum="3" >
+        android:background="@color/local_red">
 
-    <LinearLayout
+        <ImageView
+            android:id="@+id/BtnMoreConversions"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginTop="23dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_arrow_down_24"
+            />
+
+        <Spinner
+            android:id="@+id/TopConversionSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginRight="23dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="72dp"
+           />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TopConversionEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TopConversionSpinner"
+            android:layout_centerHorizontal="true"
+            android:textSize="93sp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="23dp"
+            android:hint="@string/_0_00"
+            android:padding="2dp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/TopConversionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TopConversionEditText"
+            android:layout_alignTop="@id/TopConversionEditText"
+            android:textColor="@color/local_white"
+            android:text="@string/tap_to_change_value"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/TopConversionUnitView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:padding="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/m"
+            android:textColor="@color/local_white"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/BottomConversionLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:orientation="vertical">
+        android:layout_height="500dp"
+       android:layout_gravity="bottom"
+        android:background="@color/local_yellow_dull">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/red"
-            android:background="@color/local_red"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="m → mile"
-                android:textSize="20sp"
-                android:gravity="center"
-                app:layout_constraintStart_toStartOf="@id/red"
-                app:layout_constraintEnd_toEndOf="@id/red"
-                android:id="@+id/converterText"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintTop_toTopOf="@id/red"
-                app:layout_constraintBottom_toTopOf="@id/linear2"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
+        <Spinner
+            android:id="@+id/BottomConversionSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:id="@+id/linear2"
-                app:layout_constraintBottom_toTopOf="@id/tap"
-                app:layout_constraintTop_toBottomOf="@id/converterText"
-                android:orientation="horizontal">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/BottomConversionEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/_0_00"
+            android:textColor="@color/local_black_bright"
+            />
 
-                <EditText
-                    android:id="@+id/editText1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@null"
-                    android:minHeight="48dp"
-                    android:text="@string/editText1"
-                    android:textColor="@color/white"
-                    android:cursorVisible="true"
-                    android:textCursorDrawable="@color/local_yellow_bright"
-                    android:textSize="35sp"
-                    android:textStyle="bold" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/BottomConversionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tap_to_change_value"
+            android:textColor="@color/local_black_dull"
+             />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="m"
-                    android:layout_marginStart="4dp"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    />
-            </LinearLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/BottomConversionUnitView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:padding="8dp"
+            android:layout_marginEnd="23dp"
+            android:text="@string/m"
+            android:textColor="@color/local_black_dull"
+             />
+
+    </RelativeLayout>
 
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text= "Tap to change value"
-                android:textSize="14sp"
-                android:id="@+id/tap"
-                app:layout_constraintTop_toBottomOf="@id/linear2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="20dp"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/yellow"
-            android:background="@color/local_yellow_dull"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="m → mile"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:id="@+id/text2"
-                android:textColor="@color/black"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="@id/yellow"
-                app:layout_constraintEnd_toEndOf="@id/yellow"
-                app:layout_constraintTop_toTopOf="@id/yellow"
-                app:layout_constraintBottom_toTopOf="@id/linear3"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:id="@+id/linear3"
-                app:layout_constraintBottom_toTopOf="@id/tap2"
-                app:layout_constraintTop_toBottomOf="@id/text2">
-
-                <EditText
-                    android:id="@+id/editText2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@null"
-                    android:minHeight="48dp"
-                    android:text="@string/editText2"
-                    android:textColor="@color/black"
-                    android:textSize="35sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="mile"
-                    android:layout_marginStart="4dp"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    />
-            </LinearLayout>
+</LinearLayout>
 
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text= "Tap to change value"
-                android:textSize="14sp"
-                android:id="@+id/tap2"
-                app:layout_constraintTop_toBottomOf="@id/linear3"
-                app:layout_constraintStart_toStartOf="@id/yellow"
-                app:layout_constraintEnd_toEndOf="@id/yellow"
-                android:layout_marginTop="20dp"
-                app:layout_constraintBottom_toBottomOf="@id/yellow"
-                android:textColor="@color/black"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-
-    </LinearLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:visibility="gone"
-            android:id="@+id/customButtonLayout"
-            android:background="@color/black"
-            android:layout_weight="1">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/seven"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@drawable/button"
-                android:onClick="seven"
-                android:text="@string/seven"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toTopOf="@id/four"
-                app:layout_constraintEnd_toStartOf="@id/eight"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@id/five"
-                android:text="@string/eight"
-                android:textColor="@color/white"
-                android:id="@+id/eight"
-                app:layout_constraintEnd_toStartOf="@id/nine"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toEndOf="@id/seven"
-                app:layout_constraintTop_toTopOf="parent"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/nine"
-                android:id="@+id/nine"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintBottom_toTopOf="@id/six"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toStartOf="@id/clear"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toEndOf="@id/eight"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/clear"
-                android:textColor="@color/white"
-                android:background="@drawable/button"
-                android:id="@+id/clear"
-                app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintBottom_toTopOf="@id/multiply"
-                app:layout_constraintStart_toEndOf="@id/nine"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/four"
-                android:textColor="@color/white"
-                android:id="@+id/four"
-                app:layout_constraintBottom_toTopOf="@id/one"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintEnd_toStartOf="@id/five"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/seven"
-
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/five"
-                android:textColor="@color/white"
-                android:id="@+id/five"
-                app:layout_constraintBottom_toTopOf="@id/two"
-                app:layout_constraintEnd_toStartOf="@id/six"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toEndOf="@id/four"
-                app:layout_constraintTop_toBottomOf="@id/eight"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/six"
-                android:id="@+id/six"
-                app:layout_constraintBottom_toTopOf="@id/three"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toStartOf="@id/clear"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toEndOf="@id/five"
-                app:layout_constraintTop_toBottomOf="@id/eight"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/one"
-                android:textColor="@color/white"
-                android:id="@+id/one"
-                app:layout_constraintBottom_toTopOf="@id/point"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintEnd_toStartOf="@id/two"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/four"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/two"
-                android:textColor="@color/white"
-                android:id="@+id/two"
-                app:layout_constraintBottom_toTopOf="@id/zero"
-                app:layout_constraintEnd_toStartOf="@id/three"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toEndOf="@id/one"
-                app:layout_constraintTop_toBottomOf="@id/five"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintBottom_toTopOf="@id/doubleZero"
-                android:text="@string/three"
-                android:id="@+id/three"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toStartOf="@id/multiply"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toEndOf="@id/two"
-                app:layout_constraintTop_toBottomOf="@id/six"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/multiply"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:background="@drawable/button"
-                android:id="@+id/multiply"
-                app:layout_constraintStart_toEndOf="@id/three"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/clear"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/point"
-                android:textColor="@color/white"
-                android:id="@+id/point"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintEnd_toStartOf="@id/zero"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/one"
-
-                />
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/zero"
-                android:textColor="@color/white"
-                android:id="@+id/zero"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/doubleZero"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toEndOf="@id/point"
-                app:layout_constraintTop_toBottomOf="@id/two"/>
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:text="@string/doubleZero"
-                android:id="@+id/doubleZero"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/multiply"
-                android:background="@drawable/button"
-                app:layout_constraintStart_toEndOf="@id/zero"
-                app:layout_constraintTop_toBottomOf="@id/three"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </LinearLayout>
