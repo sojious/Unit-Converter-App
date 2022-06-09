@@ -25,16 +25,6 @@ import com.google.android.material.textview.MaterialTextView
 
 class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
 
-    private lateinit var keyboardView: KeyboardView
-    private lateinit var btnMoreConversions: ImageView
-    private lateinit var topConversionSpinner: Spinner
-    private lateinit var bottomConversionSpinner: Spinner
-    private lateinit var topConversionEditText: TextInputEditText
-    private lateinit var bottomConversionEditText: TextInputEditText
-    private lateinit var topConversionTextView: MaterialTextView
-    private lateinit var bottomConversionTextView: MaterialTextView
-    private lateinit var topConversionUnitView: MaterialTextView
-    private lateinit var bottomConversionUnitView: MaterialTextView
 
     private var _binding: FragmentConversionScreenBinding? = null
     private val binding get() = _binding
@@ -49,9 +39,9 @@ class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
     ): View? {
         _binding = FragmentConversionScreenBinding
             .inflate(inflater, container, false)
-        if(args != null) {
-            Toast.makeText(activity, args?.conversionItem?.conversionName, Toast.LENGTH_SHORT).show()
-        }
+//        if(args != null) {
+//            Toast.makeText(activity, args?.conversionItem?.conversionName, Toast.LENGTH_SHORT).show()
+//        }
 
 
         return binding?.root
@@ -62,19 +52,6 @@ class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
         super.onDestroyView()
     }
 
-    private fun bindViews(view: View) {
-
-        btnMoreConversions = view.findViewById(R.id.BtnMoreConversions)
-        topConversionSpinner = view.findViewById(R.id.TopConversionSpinner)
-        bottomConversionSpinner = view.findViewById(R.id.BottomConversionSpinner)
-        topConversionEditText = view.findViewById(R.id.TopConversionEditText)
-        bottomConversionEditText = view.findViewById(R.id.BottomConversionEditText)
-        topConversionTextView = view.findViewById(R.id.TopConversionTextView)
-        bottomConversionTextView = view.findViewById(R.id.BottomConversionTextView)
-        topConversionUnitView = view.findViewById(R.id.TopConversionUnitView)
-        bottomConversionUnitView = view.findViewById(R.id.BottomConversionUnitView)
-
-    }
 
 
 //        zero.setOnClickListener(View.OnClickListener { view ->
