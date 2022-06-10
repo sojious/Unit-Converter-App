@@ -12,12 +12,24 @@
         android:id="@+id/ConversionBox1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="8dp"
         android:layout_marginTop="16dp"
+        android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.unitconverter.util.ConversionBoxView
+        android:id="@+id/ConversionBox2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/local_yellow_bright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConversionBox1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.unitconverter.ui.conversionScreen
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.Selection
@@ -57,7 +58,19 @@ class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
         super.onViewCreated(view, savedInstanceState)
         data = DataFactory.data(requireContext(), args?.conversionItem?.conversionName)
 
+        binding?.ConversionBox1?.background = Color.RED
+        binding?.ConversionBox2?.background = Color.YELLOW
+
         binding?.ConversionBox1?.configureSpinner(requireContext(), data)
+        binding?.ConversionBox2?.configureSpinner(requireContext(), data)
+
+//        binding?.ConversionBox1?.onEditTextActivated { value ->
+//            binding?.ConversionBox2?.setConversionTextField(value!!)
+//        }
+//
+//        binding?.ConversionBox2?.onEditTextActivated { value ->
+//            binding?.ConversionBox1?.setConversionTextField(value!!)
+//        }
     }
 
     override fun onDestroyView() {

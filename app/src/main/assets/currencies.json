@@ -3,76 +3,76 @@
     "id": 1,
     "conversionName": "US Dollars",
     "abbreviation": "usd",
-    "rateInUsd": 1
+    "rate": 1
   },
 
   {
     "id": 2,
     "conversionName": "Naira",
     "abbreviation": "ngn",
-    "rateInUsd": 415.13
+    "rate": 415.13
   },
 
   {
     "id": 3,
     "conversionName": "Canadian Dollars",
     "abbreviation": "cad",
-    "rateInUsd": 1.25
+    "rate": 1.25
   },
 
   {
     "id": 4,
     "conversionName": "Ghanaian Cedi",
     "abbreviation": "ghs",
-    "rateInUsd": 7.85
+    "rate": 7.85
   },
 
   {
     "id": 5,
     "conversionName": "South African Rand",
     "abbreviation": "zar",
-    "rateInUsd": 15.38
+    "rate": 15.38
   },
 
   {
     "id": 6,
     "conversionName": "British Pounds",
     "abbreviation": "gbp",
-    "rateInUsd": 0.79
+    "rate": 0.79
   },
 
   {
     "id": 7,
     "conversionName": "Euro",
     "abbreviation": "eur",
-    "rateInUsd": 0.93
+    "rate": 0.93
   },
 
   {
     "id": 8,
     "conversionName": "Australian Dollars",
     "abbreviation": "aud",
-    "rateInUsd": 1.38
+    "rate": 1.38
   },
 
   {
     "id": 9,
     "conversionName": "Japanese Yen",
     "abbreviation": "jpy",
-    "rateInUsd": 132.67
+    "rate": 132.67
   },
 
   {
     "id": 10,
     "conversionName": "Chinese Yuan",
     "abbreviation": "cny",
-    "rateInUsd": 6.67
+    "rate": 6.67
   },
 
   {
     "id": 11,
     "conversionName": "Saudi Riyal",
     "abbreviation": "sar",
-    "rateInUsd": 3.75
+    "rate": 3.75
   }
 ]

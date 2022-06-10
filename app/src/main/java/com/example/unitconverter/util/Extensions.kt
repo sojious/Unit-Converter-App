@@ -3,6 +3,7 @@ package com.example.unitconverter.util
 import android.content.Context
 import android.util.TypedValue
 import com.example.unitconverter.model.ConversionUnit
+import com.example.unitconverter.model.Currency
 
 fun Double.secondToMillisecond(): Long {
     return (this * 1000).toLong()
@@ -22,4 +23,13 @@ fun List<ConversionUnit>.getConversionNames(): List<String> {
         names.add(it.conversionName)
     }
     return names.toList()
+}
+
+
+fun Double.convert(from: ConversionUnit, to: ConversionUnit): Double? {
+    val isValid = from::class == to::class
+    if (isValid) {
+        return this * (to.rate / from.rate)
+    }
+    return null
 }

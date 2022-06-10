@@ -24,6 +24,7 @@ open class ConversionItem(
 
 interface ConversionUnit {
     val conversionName: String
+    val rate: Double
 }
 
 
@@ -32,7 +33,7 @@ data class Currency(
     val id: Int,
     override val conversionName: String,
     val abbreviation: String,
-    val rateInUsd: Double
+    override val rate: Double
 ) : Parcelable, ConversionUnit
 
 

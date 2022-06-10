@@ -8,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
 import androidx.core.content.res.getColorOrThrow
+import androidx.core.widget.addTextChangedListener
 import com.example.unitconverter.R
 import com.example.unitconverter.model.ConversionUnit
+import com.example.unitconverter.model.Currency
 
 
 class ConversionBoxView @JvmOverloads constructor(
@@ -22,13 +24,22 @@ class ConversionBoxView @JvmOverloads constructor(
     private val conversionTextField: EditText
     private val conversionCaption: TextView
 
-    private var textColor: Int
-    private var background: Int
-    private var primaryTextSize: Float
-    private var captionSize: Float
+    var textColor: Int
+    var background: Int
+    var primaryTextSize: Float
+    var captionSize: Float
     private var cursorColor: Int
 
     private var dataSet: MutableList<ConversionUnit> = mutableListOf()
+
+    private var _editTextValue: String? = null
+    val editTextValue get() = _editTextValue
+
+    private var listeners: ArrayList<(String?) -> Unit> = arrayListOf()
+
+    private var _currentUnitItem: ConversionUnit? = null
+    val currentUnitItem get() = _currentUnitItem
+
 
     init {
         orientation = VERTICAL
@@ -49,34 +60,58 @@ class ConversionBoxView @JvmOverloads constructor(
                 Color.BLACK
             )
 
+            conversionTextField.setTextColor(textColor)
+
+
             background = attributeResource.getColor(
                 R.styleable.ConversionBoxView_background,
                 Color.WHITE
             )
+
+            this.setBackgroundColor(background)
 
             primaryTextSize = attributeResource.getDimension(
                 R.styleable.ConversionBoxView_primaryTextSize,
                 8f.toDp(context)
             )
 
+            conversionTextField.textSize = primaryTextSize
+
             captionSize = attributeResource.getDimension(
                 R.styleable.ConversionBoxView_captionSize,
                 8f.toDp(context)
             )
+
+            conversionCaption.textSize = captionSize
 
             cursorColor = attributeResource.getColor(
                 R.styleable.ConversionBoxView_cursorColor,
                 Color.BLACK
             )
 
+
         } finally {
             attributeResource.recycle()
         }
 
+        conversionTextField.addTextChangedListener(
+            onTextChanged = { text, start, before, count ->
+                // todo get the value from here if being entered here.
+                //todo else set the value
+                _editTextValue = text.toString()
+                listeners.forEach { broadcastText ->
+                    broadcastText(editTextValue)
+                }
+            }
+        )
+
+
     }
 
+    fun onEditTextActivated(callback: (String?) -> Unit) {
+        listeners.add(callback)
+    }
 
-    //todo parse the input data
     private fun passData(items: List<ConversionUnit>) {
         if (dataSet.isEmpty()) {
             dataSet.addAll(items)
@@ -86,7 +121,6 @@ class ConversionBoxView @JvmOverloads constructor(
 
     fun configureSpinner(context: Context, items: List<ConversionUnit>) {
         passData(items)
-        //todo customize adapter
 
         val spinnerAdapter = ArrayAdapter<String>(
             context,
@@ -109,6 +143,7 @@ class ConversionBoxView @JvmOverloads constructor(
                     Toast.LENGTH_SHORT
                 ).show()
                 //todo update the edit text sub unit
+                _currentUnitItem = items[position]
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -118,5 +153,8 @@ class ConversionBoxView @JvmOverloads constructor(
         }
     }
 
+    fun setConversionTextField(value: String) {
+        conversionTextField.setText(value)
+    }
 
 }
