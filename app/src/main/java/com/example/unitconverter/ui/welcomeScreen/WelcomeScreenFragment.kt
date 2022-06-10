@@ -18,7 +18,7 @@ class WelcomeScreenFragment : Fragment() {
     private var _binding: FragmentWelcomeScreenBinding? = null
     private val binding get() = _binding
     private lateinit var conversionAdapter: WelcomeScreenConversionsAdapter
-    private var items: List<ConversionItem> = ConversionData.items
+    private lateinit var items: List<ConversionItem>
     private lateinit var clickedConversionItem: ConversionItem
 
 
@@ -28,11 +28,15 @@ class WelcomeScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentWelcomeScreenBinding.inflate(inflater, container, false)
-
+        items = ConversionData.items
         loadConversionData()
         return binding?.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        loadConversionData()
+    }
 
     override fun onDestroyView() {
         _binding = null
@@ -46,12 +50,10 @@ class WelcomeScreenFragment : Fragment() {
             clickedConversionItem = it
             val navigationAction = WelcomeScreenFragmentDirections
                 .actionWelcomeScreenFragmentToConversionScreenFragment(clickedConversionItem)
-            findNavController().navigate(R.id.action_welcomeScreenFragment_to_conversionScreenFragment)
+            findNavController().navigate(navigationAction)
             Toast.makeText(activity, "Testing Toast", Toast.LENGTH_SHORT).show()
         }
-
         binding?.WelcomeScreenRecyclerView?.adapter = conversionAdapter
-
     }
 
 }

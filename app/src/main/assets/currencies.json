@@ -1,67 +1,78 @@
 [
   {
-    "name": "US Dollars",
+    "id": 1,
+    "conversionName": "US Dollars",
     "abbreviation": "usd",
-    "rate_in_usd": 1
+    "rateInUsd": 1
   },
 
   {
-    "name": "Naira",
+    "id": 2,
+    "conversionName": "Naira",
     "abbreviation": "ngn",
-    "rate_in_usd": 415.13
+    "rateInUsd": 415.13
   },
 
   {
-    "name": "Canadian Dollars",
+    "id": 3,
+    "conversionName": "Canadian Dollars",
     "abbreviation": "cad",
-    "rate_in_usd": 1.25
+    "rateInUsd": 1.25
   },
 
   {
-    "name": "Ghanaian Cedi",
+    "id": 4,
+    "conversionName": "Ghanaian Cedi",
     "abbreviation": "ghs",
-    "rate_in_usd": 7.85
+    "rateInUsd": 7.85
   },
 
   {
-    "name": "South African Rand",
+    "id": 5,
+    "conversionName": "South African Rand",
     "abbreviation": "zar",
-    "rate_in_usd": 15.38
+    "rateInUsd": 15.38
   },
 
   {
-    "name": "British Pounds",
+    "id": 6,
+    "conversionName": "British Pounds",
     "abbreviation": "gbp",
-    "rate_in_usd": 0.79
+    "rateInUsd": 0.79
   },
 
   {
-    "name": "Euro",
+    "id": 7,
+    "conversionName": "Euro",
     "abbreviation": "eur",
-    "rate_in_usd": 0.93
+    "rateInUsd": 0.93
   },
 
   {
-    "name": "Australian Dollars",
+    "id": 8,
+    "conversionName": "Australian Dollars",
     "abbreviation": "aud",
-    "rate_in_usd": 1.38
+    "rateInUsd": 1.38
   },
 
   {
-    "name": "Japanese Yen",
+    "id": 9,
+    "conversionName": "Japanese Yen",
     "abbreviation": "jpy",
-    "rate_in_usd": 132.67
+    "rateInUsd": 132.67
   },
 
   {
-    "name": "Chinese Yuan",
+    "id": 10,
+    "conversionName": "Chinese Yuan",
     "abbreviation": "cny",
-    "rate_in_usd": 6.67
+    "rateInUsd": 6.67
   },
 
   {
-    "name": "Saudi Riyal",
+    "id": 11,
+    "conversionName": "Saudi Riyal",
     "abbreviation": "sar",
-    "rate_in_usd": 3.75
+    "rateInUsd": 3.75
   }
 ]

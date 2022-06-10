@@ -1,5 +1,6 @@
 package com.example.unitconverter.ui.conversionScreen
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -17,8 +18,12 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.unitconverter.R
+import com.example.unitconverter.data.ConversionData
+import com.example.unitconverter.data.CurrencyDb
 import com.example.unitconverter.databinding.FragmentConversionScreenBinding
 import com.example.unitconverter.model.ConversionItem
+import com.example.unitconverter.model.ConversionType
+import com.example.unitconverter.model.ConversionUnit
 import com.example.unitconverter.util.KeyboardView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textview.MaterialTextView
@@ -28,6 +33,7 @@ class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
 
     private var _binding: FragmentConversionScreenBinding? = null
     private val binding get() = _binding
+    private var data: List<ConversionUnit> = listOf()
 
     private val args: ConversionScreenFragmentArgs? by navArgs()
 
@@ -49,13 +55,15 @@ class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        data = DataFactory.data(requireContext(), args?.conversionItem?.conversionName)
+
+        binding?.ConversionBox1?.configureSpinner(requireContext(), data)
     }
 
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
     }
-
 
 
 //        zero.setOnClickListener(View.OnClickListener { view ->
@@ -196,4 +204,25 @@ class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
 //    }
 
 
+}
+
+class DataFactory {
+    companion object {
+        fun data(context: Context, conversionName: String?): List<ConversionUnit> {
+            return when (conversionName) {
+                ConversionType.Currency.name -> {
+                    CurrencyDb.currencies(context)
+                }
+                ConversionType.Length.name -> {
+                    //todo
+                    emptyList()
+                }
+                ConversionType.Area.name -> {
+                    //todo
+                    emptyList()
+                }
+                else -> emptyList()
+            }
+        }
+    }
 }

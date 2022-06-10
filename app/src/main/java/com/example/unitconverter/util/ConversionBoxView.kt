@@ -5,12 +5,11 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.Spinner
-import android.widget.TextView
+import android.view.View
+import android.widget.*
 import androidx.core.content.res.getColorOrThrow
 import com.example.unitconverter.R
+import com.example.unitconverter.model.ConversionUnit
 
 
 class ConversionBoxView @JvmOverloads constructor(
@@ -28,6 +27,8 @@ class ConversionBoxView @JvmOverloads constructor(
     private var primaryTextSize: Float
     private var captionSize: Float
     private var cursorColor: Int
+
+    private var dataSet: MutableList<ConversionUnit> = mutableListOf()
 
     init {
         orientation = VERTICAL
@@ -55,12 +56,12 @@ class ConversionBoxView @JvmOverloads constructor(
 
             primaryTextSize = attributeResource.getDimension(
                 R.styleable.ConversionBoxView_primaryTextSize,
-                toDp(8f)
+                8f.toDp(context)
             )
 
             captionSize = attributeResource.getDimension(
                 R.styleable.ConversionBoxView_captionSize,
-                toDp(8f)
+                8f.toDp(context)
             )
 
             cursorColor = attributeResource.getColor(
@@ -75,12 +76,47 @@ class ConversionBoxView @JvmOverloads constructor(
     }
 
 
-    private fun toDp(value: Float): Float {
-        return TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_DIP,
-            value.toFloat(),
-            context.resources.displayMetrics
-        )
+    //todo parse the input data
+    private fun passData(items: List<ConversionUnit>) {
+        if (dataSet.isEmpty()) {
+            dataSet.addAll(items)
+        }
+        return
     }
+
+    fun configureSpinner(context: Context, items: List<ConversionUnit>) {
+        passData(items)
+        //todo customize adapter
+
+        val spinnerAdapter = ArrayAdapter<String>(
+            context,
+            R.layout.simple_spinner_item, dataSet.getConversionNames()
+        ).apply {
+            setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
+        }
+
+        conversionSpinner.adapter = spinnerAdapter
+        conversionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(
+                    context,
+                    "You have clicked on ${items[position].conversionName}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                //todo update the edit text sub unit
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
+    }
+
 
 }
