@@ -5,17 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.unitconverter.R
 import com.example.unitconverter.adapters.WelcomeScreenConversionsAdapter
 import com.example.unitconverter.data.ConversionData
 import com.example.unitconverter.databinding.FragmentWelcomeScreenBinding
 import com.example.unitconverter.model.ConversionItem
-import com.example.unitconverter.util.WelcomeScreenConversionInterface
 
 class WelcomeScreenFragment : Fragment() {
     private var _binding: FragmentWelcomeScreenBinding? = null
@@ -49,7 +46,7 @@ class WelcomeScreenFragment : Fragment() {
             clickedConversionItem = it
             val navigationAction = WelcomeScreenFragmentDirections
                 .actionWelcomeScreenFragmentToConversionScreenFragment(clickedConversionItem)
-            findNavController().navigate(navigationAction)
+            findNavController().navigate(R.id.action_welcomeScreenFragment_to_conversionScreenFragment)
             Toast.makeText(activity, "Testing Toast", Toast.LENGTH_SHORT).show()
         }
 
