@@ -21,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding?.root)
         startAnimation()
         object : Handler(Looper.getMainLooper()) {}
-            .postDelayed({ goToMainActivity() }, 3.0.secondToMillisecond())
+            .postDelayed({ goToMainActivity() }, 1.0.secondToMillisecond())
     }
 
     private fun startAnimation() {
@@ -31,11 +31,16 @@ class SplashActivity : AppCompatActivity() {
             animate().alpha(0.7f).setDuration(3.0.secondToMillisecond())
                 .setListener(null)
 
-            Thread.sleep(3.0.secondToMillisecond())
+            Thread.sleep(1.0.secondToMillisecond())
 
             alpha = 0.7f
+            visibility = View.VISIBLE
+            animate().alpha(0f).setDuration(3.0.secondToMillisecond())
+                .setListener(null)
+            Thread.sleep(1.0.secondToMillisecond())
 
-            animate().alpha(0f).setDuration(2.0.secondToMillisecond())
+            alpha = 0f
+            animate().alpha(1f).setDuration(2.0.secondToMillisecond())
                 .setListener(object : AnimatorListenerAdapter() {
                     override fun onAnimationEnd(animation: Animator?, isReverse: Boolean) {
                         visibility = View.GONE
