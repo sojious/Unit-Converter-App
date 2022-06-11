@@ -1,41 +1,39 @@
 package com.example.unitconverter.ui.conversionScreen
 
 import android.content.Context
-import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Editable
-import android.text.Selection
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Spinner
-import android.widget.Toast
-import androidx.appcompat.widget.AppCompatButton
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.unitconverter.R
-import com.example.unitconverter.data.ConversionData
 import com.example.unitconverter.data.CurrencyDb
 import com.example.unitconverter.databinding.FragmentConversionScreenBinding
-import com.example.unitconverter.model.ConversionItem
 import com.example.unitconverter.model.ConversionType
 import com.example.unitconverter.model.ConversionUnit
-import com.example.unitconverter.util.KeyboardView
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textview.MaterialTextView
+import com.example.unitconverter.util.ConversionBoxView
+import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 
-class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
+class ConversionScreenFragment :
+    Fragment(R.layout.fragment_conversion_screen) {
 
 
     private var _binding: FragmentConversionScreenBinding? = null
     private val binding get() = _binding
     private var data: List<ConversionUnit> = listOf()
+    private var conversionBox1: ConversionBoxView? = null
+    private var conversionBox2: ConversionBoxView? = null
+
+    private var currentConversionUnit1: ConversionUnit? = null
+    private var currentConversionUnit2: ConversionUnit? = null
+    private val TAG = "ConversionFragment"
+
+    private var convertedText: Double? = null
 
     private val args: ConversionScreenFragmentArgs? by navArgs()
 
@@ -52,31 +50,125 @@ class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        data = DataFactory.data(requireContext(), args?.conversionItem?.conversionName)
-
-        binding?.ConversionBox1?.configureSpinner(requireContext(), data)
-        binding?.ConversionBox2?.configureSpinner(requireContext(), data)
-        binding?.ConversionBox1?.setConversionTextSize(42f)
-
-        binding?.ConversionBox1?.getTextField()?.addTextChangedListener(
-            onTextChanged = { text, start, before, count ->
-                binding?.ConversionBox2?.setConversionTextField(text.toString())
-            }
+        data = DataFactory.getData(
+            requireContext(),
+            args?.conversionItem?.conversionName
         )
 
-        binding?.ConversionBox2?.getTextField()?.addTextChangedListener(
-            onTextChanged = { text, start, before, count ->
-                binding?.ConversionBox1?.setConversionTextField(text.toString())
-            }
-        )
+        conversionBox1 = binding?.ConversionBox1
+        conversionBox2 = binding?.ConversionBox2
+
+        currentConversionUnit1 = conversionBox1?.currentUnitItem
+        currentConversionUnit2 = conversionBox2?.currentUnitItem
+
+        conversionBox1?.configureSpinner(requireContext(), data)
+        conversionBox2?.configureSpinner(requireContext(), data)
+        conversionBox1?.setConversionTextSize(42f)
+
+        lifecycleScope.launch {
+            processConversions()
+        }
+
 
     }
 
+    private fun processConversions() {
+        conversionBox1?.getTextField()?.onFocusChangeListener =
+            View.OnFocusChangeListener { view, hasFocus ->
+                if (hasFocus) {
+                    conversionBox1?.getTextField()?.addTextChangedListener(
+                        onTextChanged = { text, _, _, _ ->
+                            convertedText = if (text.toString() == "") 0.0 else {
+                                text.toString()
+                                    .convert(
+                                        conversionBox1?.currentUnitItem!!,
+                                        conversionBox2?.currentUnitItem!!
+                                    ).toDouble()
+                            }
+                            Log.i(TAG, "onTextChanged")
+                            conversionBox2?.setConversionTextField(
+                                if (convertedText != null) convertedText.toString() else ""
+                            )
+                        },
+                        afterTextChanged = {
+                            Log.i(TAG, "afterTextChanged")
+                        }
+                    )
+                }
+            }
+
+        conversionBox2?.getTextField()?.onFocusChangeListener =
+            View.OnFocusChangeListener { view, hasFocus ->
+                if (hasFocus) {
+                    conversionBox2?.getTextField()?.addTextChangedListener(
+                        onTextChanged = { text, _, _, _ ->
+                            convertedText = if (text.toString() == "") 0.0 else {
+                                text.toString()
+                                    .convert(
+                                        conversionBox2?.currentUnitItem!!,
+                                        conversionBox1?.currentUnitItem!!
+                                    ).toDouble()
+                            }
+                            Log.i(TAG, "onTextChanged")
+                            conversionBox1?.setConversionTextField(
+                                if (convertedText != null) convertedText.toString() else ""
+                            )
+                        },
+                        afterTextChanged = {
+                            Log.i(TAG, "afterTextChanged")
+                        }
+                    )
+                }
+            }
+    }
 
     override fun onDestroyView() {
         _binding = null
+        convertedText = null
         super.onDestroyView()
     }
+
+}
+
+class DataFactory {
+    companion object {
+        fun getData(
+            context: Context,
+            conversionName: String?
+        ): List<ConversionUnit> {
+            var units = listOf<ConversionUnit>()
+
+            units = when (conversionName) {
+                ConversionType.Currency.name -> {
+                    CurrencyDb.currencies(context)
+                }
+                ConversionType.Length.name -> {
+                    //todo
+                    emptyList()
+                }
+                ConversionType.Area.name -> {
+                    //todo
+                    emptyList()
+                }
+                else -> emptyList()
+            }
+            return units
+        }
+    }
+}
+
+
+fun Double.convert(from: ConversionUnit, to: ConversionUnit): Double {
+    val isValid = from::class == to::class
+    if (isValid) {
+        return this * (to.rate / from.rate)
+    }
+    return 0.0
+}
+
+fun String.convert(from: ConversionUnit, to: ConversionUnit): String {
+    return this.toDouble().convert(from, to).toString()
+}
 
 
 //        zero.setOnClickListener(View.OnClickListener { view ->
@@ -215,27 +307,3 @@ class ConversionScreenFragment : Fragment(R.layout.fragment_conversion_screen) {
 //        editText2.setText(String.format("%s%s%s", positiontextBegin, Value, positiontextEnd))
 //        editText2.setSelection(startCursor + Value.length)
 //    }
-
-
-}
-
-class DataFactory {
-    companion object {
-        fun data(context: Context, conversionName: String?): List<ConversionUnit> {
-            return when (conversionName) {
-                ConversionType.Currency.name -> {
-                    CurrencyDb.currencies(context)
-                }
-                ConversionType.Length.name -> {
-                    //todo
-                    emptyList()
-                }
-                ConversionType.Area.name -> {
-                    //todo
-                    emptyList()
-                }
-                else -> emptyList()
-            }
-        }
-    }
-}

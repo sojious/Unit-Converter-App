@@ -1,13 +1,14 @@
 package com.example.unitconverter
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.example.unitconverter.databinding.ActivitySplashBinding
 import com.example.unitconverter.util.secondToMillisecond
 
@@ -35,17 +36,10 @@ class SplashActivity : AppCompatActivity() {
 
             alpha = 0.7f
             visibility = View.VISIBLE
-            animate().alpha(0f).setDuration(3.0.secondToMillisecond())
+            animate().alpha(1f).setDuration(3.0.secondToMillisecond())
                 .setListener(null)
             Thread.sleep(1.0.secondToMillisecond())
 
-            alpha = 0f
-            animate().alpha(1f).setDuration(2.0.secondToMillisecond())
-                .setListener(object : AnimatorListenerAdapter() {
-                    override fun onAnimationEnd(animation: Animator?, isReverse: Boolean) {
-                        visibility = View.GONE
-                    }
-                })
         }
     }
 
@@ -56,10 +50,12 @@ class SplashActivity : AppCompatActivity() {
                 MainActivity::class.java
             )
         )
+        finish()
     }
 
     override fun onDestroy() {
         _binding = null
         super.onDestroy()
     }
+
 }

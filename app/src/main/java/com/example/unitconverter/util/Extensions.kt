@@ -26,10 +26,4 @@ fun List<ConversionUnit>.getConversionNames(): List<String> {
 }
 
 
-fun Double.convert(from: ConversionUnit, to: ConversionUnit): Double? {
-    val isValid = from::class == to::class
-    if (isValid) {
-        return this * (to.rate / from.rate)
-    }
-    return null
-}
+

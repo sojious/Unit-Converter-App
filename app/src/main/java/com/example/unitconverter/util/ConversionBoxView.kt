@@ -33,7 +33,7 @@ class ConversionBoxView @JvmOverloads constructor(
     private val editTextValue get() = _editTextValue
 
     private var _currentUnitItem: ConversionUnit? = null
-    private val currentUnitItem get() = _currentUnitItem
+     val currentUnitItem get() = _currentUnitItem
 
 
     init {
@@ -76,13 +76,9 @@ class ConversionBoxView @JvmOverloads constructor(
                 12f
             )
             conversionCaption.setTextSize(TypedValue.COMPLEX_UNIT_SP, captionSize)
-
-
         } finally {
             attributeResource.recycle()
         }
-
-
     }
 
 

@@ -55,4 +55,6 @@ class WelcomeScreenFragment : Fragment() {
         binding?.WelcomeScreenRecyclerView?.adapter = conversionAdapter
     }
 
+
+
 }
