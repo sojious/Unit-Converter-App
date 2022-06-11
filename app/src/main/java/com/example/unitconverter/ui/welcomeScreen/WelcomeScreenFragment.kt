@@ -51,7 +51,6 @@ class WelcomeScreenFragment : Fragment() {
             val navigationAction = WelcomeScreenFragmentDirections
                 .actionWelcomeScreenFragmentToConversionScreenFragment(clickedConversionItem)
             findNavController().navigate(navigationAction)
-            Toast.makeText(activity, "Testing Toast", Toast.LENGTH_SHORT).show()
         }
         binding?.WelcomeScreenRecyclerView?.adapter = conversionAdapter
     }
