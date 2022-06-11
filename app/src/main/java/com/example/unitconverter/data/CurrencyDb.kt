@@ -21,3 +21,5 @@ class CurrencyDb {
         }
     }
 }
+
+//TODO Please, populate the other JSON files already created in the assets folder.

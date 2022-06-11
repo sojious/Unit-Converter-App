@@ -2,7 +2,6 @@
     <string name="app_name">Unit Converter</string>
     <string name="sample">Sample</string>
     <string name="welcome_statement">Welcome,\nwhat do you\nwant to\nconvert?</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>

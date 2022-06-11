@@ -2,6 +2,8 @@ package com.example.unitconverter.ui.conversionScreen
 
 import android.content.Context
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,10 +14,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.example.unitconverter.R
 import com.example.unitconverter.data.CurrencyDb
+import com.example.unitconverter.data.DataFactory
 import com.example.unitconverter.databinding.FragmentConversionScreenBinding
 import com.example.unitconverter.model.ConversionType
 import com.example.unitconverter.model.ConversionUnit
 import com.example.unitconverter.util.ConversionBoxView
+import com.example.unitconverter.util.convert
+import com.example.unitconverter.util.roundOff
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
@@ -34,6 +39,8 @@ class ConversionScreenFragment :
     private val TAG = "ConversionFragment"
 
     private var convertedText: Double? = null
+    private var firstConversionTextFieldWatcher: TextWatcher? = null
+    private var secondConversionTextFieldWatcher: TextWatcher? = null
 
     private val args: ConversionScreenFragmentArgs? by navArgs()
 
@@ -65,59 +72,88 @@ class ConversionScreenFragment :
         conversionBox2?.configureSpinner(requireContext(), data)
         conversionBox1?.setConversionTextSize(42f)
 
+
         lifecycleScope.launch {
-            processConversions()
+            processFirstConversionBox()
+        }
+
+        lifecycleScope.launch {
+            processSecondConversionBox()
         }
 
 
     }
 
-    private fun processConversions() {
-        conversionBox1?.getTextField()?.onFocusChangeListener =
-            View.OnFocusChangeListener { view, hasFocus ->
-                if (hasFocus) {
-                    conversionBox1?.getTextField()?.addTextChangedListener(
-                        onTextChanged = { text, _, _, _ ->
-                            convertedText = if (text.toString() == "") 0.0 else {
-                                text.toString()
-                                    .convert(
-                                        conversionBox1?.currentUnitItem!!,
-                                        conversionBox2?.currentUnitItem!!
-                                    ).toDouble()
-                            }
-                            Log.i(TAG, "onTextChanged")
-                            conversionBox2?.setConversionTextField(
-                                if (convertedText != null) convertedText.toString() else ""
-                            )
-                        },
-                        afterTextChanged = {
-                            Log.i(TAG, "afterTextChanged")
-                        }
-                    )
-                }
+    private fun processFirstConversionBox() {
+        firstConversionTextFieldWatcher = object : TextWatcher {
+            override fun beforeTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                convertedText = if (text.toString() == "") 0.0 else {
+                    text.toString()
+                        .convert(
+                            conversionBox1?.currentUnitItem!!,
+                            conversionBox2?.currentUnitItem!!
+                        ).toDouble().roundOff()
+                }
+                Log.i(TAG, "onTextChanged1")
+                conversionBox2?.setConversionTextField(
+                    if (convertedText != null) convertedText.toString() else ""
+                )
+            }
+
+            override fun afterTextChanged(text: Editable?) {
+            }
+
+        }
+
+        conversionBox1?.getTextField()?.onFocusChangeListener =
+            View.OnFocusChangeListener { _, hasFocus ->
+                val startText = "0.0"
+                conversionBox2?.setConversionTextField(startText)
+                if (hasFocus) {
+                    conversionBox2?.getTextField()
+                        ?.removeTextChangedListener(secondConversionTextFieldWatcher)
+                    conversionBox1?.getTextField()
+                        ?.addTextChangedListener(firstConversionTextFieldWatcher)
+
+                }
+            }
+    }
+
+    private fun processSecondConversionBox() {
+        secondConversionTextFieldWatcher = object : TextWatcher {
+            override fun beforeTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(text: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                convertedText = if (text.toString() == "") 0.0 else {
+                    text.toString()
+                        .convert(
+                            conversionBox2?.currentUnitItem!!,
+                            conversionBox1?.currentUnitItem!!
+                        ).toDouble().roundOff()
+                }
+                Log.i(TAG, "onTextChanged2")
+                conversionBox1?.setConversionTextField(
+                    if (convertedText != null) convertedText.toString() else ""
+                )
+            }
+
+            override fun afterTextChanged(text: Editable?) {
+            }
+
+        }
         conversionBox2?.getTextField()?.onFocusChangeListener =
             View.OnFocusChangeListener { view, hasFocus ->
+                val startText = "0.0"
+                conversionBox2?.setConversionTextField(startText)
                 if (hasFocus) {
-                    conversionBox2?.getTextField()?.addTextChangedListener(
-                        onTextChanged = { text, _, _, _ ->
-                            convertedText = if (text.toString() == "") 0.0 else {
-                                text.toString()
-                                    .convert(
-                                        conversionBox2?.currentUnitItem!!,
-                                        conversionBox1?.currentUnitItem!!
-                                    ).toDouble()
-                            }
-                            Log.i(TAG, "onTextChanged")
-                            conversionBox1?.setConversionTextField(
-                                if (convertedText != null) convertedText.toString() else ""
-                            )
-                        },
-                        afterTextChanged = {
-                            Log.i(TAG, "afterTextChanged")
-                        }
-                    )
+                    conversionBox1?.getTextField()
+                        ?.removeTextChangedListener(firstConversionTextFieldWatcher)
+                    conversionBox2?.getTextField()
+                        ?.addTextChangedListener(secondConversionTextFieldWatcher)
                 }
             }
     }
@@ -128,46 +164,6 @@ class ConversionScreenFragment :
         super.onDestroyView()
     }
 
-}
-
-class DataFactory {
-    companion object {
-        fun getData(
-            context: Context,
-            conversionName: String?
-        ): List<ConversionUnit> {
-            var units = listOf<ConversionUnit>()
-
-            units = when (conversionName) {
-                ConversionType.Currency.name -> {
-                    CurrencyDb.currencies(context)
-                }
-                ConversionType.Length.name -> {
-                    //todo
-                    emptyList()
-                }
-                ConversionType.Area.name -> {
-                    //todo
-                    emptyList()
-                }
-                else -> emptyList()
-            }
-            return units
-        }
-    }
-}
-
-
-fun Double.convert(from: ConversionUnit, to: ConversionUnit): Double {
-    val isValid = from::class == to::class
-    if (isValid) {
-        return this * (to.rate / from.rate)
-    }
-    return 0.0
-}
-
-fun String.convert(from: ConversionUnit, to: ConversionUnit): String {
-    return this.toDouble().convert(from, to).toString()
 }
 
 

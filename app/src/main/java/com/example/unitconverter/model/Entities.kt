@@ -11,8 +11,16 @@ import kotlinx.parcelize.Parcelize
 enum class ConversionType(type: String) {
     Currency("Currency"),
     Length("Length"),
-    Area("Area")
-    //todo add more units
+    Area("Area"),
+    Volume("Volume"),
+    Mileage("Mileage"),
+    Speed("Speed"),
+    Power("Power"),
+    Pressure("Pressure"),
+    Temperature("Temperature"),
+    Time("Time"),
+    Weight("Weight"),
+    Data("Data")
 }
 
 @Parcelize
@@ -36,4 +44,5 @@ data class Currency(
     override val rate: Double
 ) : Parcelable, ConversionUnit
 
+//TODO please add more data classes for the other conversion units, don't forget to implement the ConversionUnit and Parcelable interfaces as demoed with Currency
 

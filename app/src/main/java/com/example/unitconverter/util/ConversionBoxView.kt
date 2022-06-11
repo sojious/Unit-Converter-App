@@ -2,6 +2,7 @@ package com.example.unitconverter.util
 
 import android.content.Context
 import android.graphics.Color
+import android.text.TextWatcher
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ class ConversionBoxView @JvmOverloads constructor(
     private val conversionSpinner: Spinner
     private val conversionTextField: EditText
     private val conversionCaption: TextView
+
 
     var textColor: Int
     var localBackground: Int
@@ -111,7 +113,6 @@ class ConversionBoxView @JvmOverloads constructor(
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
             }
 
         }
