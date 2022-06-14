@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "conversionName": "US Dollars",
+    "abbreviation": "usd",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "Naira",
+    "abbreviation": "ngn",
+    "rate": 415.13
+  },
+
+  {
+    "id": 3,
+    "conversionName": "Canadian Dollars",
+    "abbreviation": "cad",
+    "rate": 1.25
+  },
+
+  {
+    "id": 4,
+    "conversionName": "Ghanaian Cedi",
+    "abbreviation": "ghs",
+    "rate": 7.85
+  },
+
+  {
+    "id": 5,
+    "conversionName": "South African Rand",
+    "abbreviation": "zar",
+    "rate": 15.38
+  },
+
+  {
+    "id": 6,
+    "conversionName": "British Pounds",
+    "abbreviation": "gbp",
+    "rate": 0.79
+  },
+
+  {
+    "id": 7,
+    "conversionName": "Euro",
+    "abbreviation": "eur",
+    "rate": 0.93
+  },
+
+  {
+    "id": 8,
+    "conversionName": "Australian Dollars",
+    "abbreviation": "aud",
+    "rate": 1.38
+  },
+
+  {
+    "id": 9,
+    "conversionName": "Japanese Yen",
+    "abbreviation": "jpy",
+    "rate": 132.67
+  },
+
+  {
+    "id": 10,
+    "conversionName": "Chinese Yuan",
+    "abbreviation": "cny",
+    "rate": 6.67
+  },
+
+  {
+    "id": 11,
+    "conversionName": "Saudi Riyal",
+    "abbreviation": "sar",
+    "rate": 3.75
+  }
+]
