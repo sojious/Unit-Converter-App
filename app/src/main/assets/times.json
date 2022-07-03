@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "conversionName": "Second",
+    "abbreviation": "s",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "Minute",
+    "abbreviation": "min",
+    "rate": 0.01666666667
+  },
+
+  {
+    "id": 3,
+    "conversionName": "Hour",
+    "abbreviation": "hr",
+    "rate": 0.00027777778
+  },
+
+  {
+    "id": 4,
+    "conversionName": "Day",
+    "abbreviation": "day",
+    "rate": 0.00001157
+  },
+
+  {
+    "id": 5,
+    "conversionName": "Week",
+    "abbreviation": "week",
+    "rate":0.00000165344
+  },
+
+  {
+    "id": 6,
+    "conversionName": "Month",
+    "abbreviation": "month",
+    "rate": 0.0000003805
+  },
+
+  {
+    "id": 7,
+    "conversionName": "Year",
+    "abbreviation": "year",
+    "rate": 0.00000003171
+  }
+]
