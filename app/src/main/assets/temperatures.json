@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "conversionName": "Kelvin",
+    "abbreviation": "K",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "Celcius",
+    "abbreviation": "C",
+    "rate": -273.15
+  },
+
+  {
+    "id": 3,
+    "conversionName": "Farenheit",
+    "abbreviation": "F",
+    "rate": -459.67
+  },
+
+  {
+    "id": 4,
+    "conversionName": "Rankine",
+    "abbreviation": "Ra",
+    "rate": 1.8
+  },
+
+  {
+    "id": 5,
+    "conversionName": "Reaumur",
+    "abbreviation": "R",
+    "rate": -217.72
+  }
+
+]

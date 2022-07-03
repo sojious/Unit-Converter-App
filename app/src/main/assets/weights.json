@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "conversionName": "Kilogram",
+    "abbreviation": "kg",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "Gram",
+    "abbreviation": "g",
+    "rate":1000
+  },
+
+  {
+    "id": 3,
+    "conversionName": "Decagram",
+    "abbreviation": "dg",
+    "rate": 100
+  },
+
+  {
+    "id": 4,
+    "conversionName": "Hectogram",
+    "abbreviation": "hg",
+    "rate": 10
+  },
+
+  {
+    "id": 5,
+    "conversionName": "Decigram",
+    "abbreviation": "dg",
+    "rate":10000
+  },
+
+  {
+    "id": 6,
+    "conversionName": "Centigram",
+    "abbreviation": "cg",
+    "rate": 100000
+  },
+
+  {
+    "id": 7,
+    "conversionName": "Milligram",
+    "abbreviation": "mg",
+    "rate": 1000000
+  },
+
+  {
+    "id": 8,
+    "conversionName": "Metric Ton",
+    "abbreviation": "t",
+    "rate":0.001
+  }
+
+]

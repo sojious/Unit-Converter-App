@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "conversionName": "Metre per Second",
+    "abbreviation": "mps",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "Centimetre per Second",
+    "abbreviation": "cm/s",
+    "rate": 100
+  },
+
+  {
+    "id": 3,
+    "conversionName": "Kilometre per Second",
+    "abbreviation": "km/s",
+    "rate": 0.001
+  },
+
+  {
+    "id": 4,
+    "conversionName": "Inches Per Second",
+    "abbreviation": "inch/s",
+    "rate": 39.3701
+  },
+
+  {
+    "id": 5,
+    "conversionName": "Feet Per Second",
+    "abbreviation": "ft/s",
+    "rate": 3.281
+  },
+
+  {
+    "id": 6,
+    "conversionName": "Miles Per Hour",
+    "abbreviation": "mi/h",
+    "rate":2.237
+  },
+
+  {
+    "id": 7,
+    "conversionName": "Knot",
+    "abbreviation": "kn",
+    "rate": 1.944
+  },
+  {
+    "id": 8,
+    "conversionName": "Kilometre Per Hour",
+    "abbreviation": "km/h",
+    "rate":3.6
+  }
+]

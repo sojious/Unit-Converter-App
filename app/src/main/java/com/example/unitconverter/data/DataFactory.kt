@@ -25,16 +25,14 @@ class DataFactory {
                     emptyList()
                 }
                 ConversionType.Volume.name -> {
-                    //todo create the db as done for CurrencyDb
-                    emptyList()
+                    VolumeDb.volumes(context)
                 }
                 ConversionType.Mileage.name -> {
                     //todo create the db as done for CurrencyDb
                     emptyList()
                 }
                 ConversionType.Speed.name -> {
-                    //todo create the db as done for CurrencyDb
-                    emptyList()
+                    SpeedDb.speeds(context)
                 }
                 ConversionType.Power.name -> {
 
@@ -45,16 +43,14 @@ class DataFactory {
                     emptyList()
                 }
                 ConversionType.Temperature.name -> {
-                    //todo create the db as done for CurrencyDb
-                    emptyList()
+                    TemperatureDb.temperatures(context)
+
                 }
                 ConversionType.Time.name -> {
-                    //todo create the db as done for CurrencyDb
-                    emptyList()
+                    TimeDb.times(context)
                 }
                 ConversionType.Weight.name -> {
-                    //todo create the db as done for CurrencyDb
-                    emptyList()
+                    WeightDb.weights(context)
                 }
                 ConversionType.Data.name -> {
                     //todo create the db as done for CurrencyDb

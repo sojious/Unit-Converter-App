@@ -44,11 +44,43 @@ data class Currency(
     override val rate: Double
 ) : Parcelable, ConversionUnit
 
+@Parcelize
+data class Speed(
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
 
 @Parcelize
-data class Power(
+data class Temperature(
     val id: Int,
-   override val conversionName: String,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
+
+@Parcelize
+data class Time(
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
+
+@Parcelize
+data class Volume(
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
+
+
+@Parcelize
+data class Weight(
+    val id: Int,
+    override val conversionName: String,
     val abbreviation: String,
     override val rate: Double
 ) : Parcelable, ConversionUnit

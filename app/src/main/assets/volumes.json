@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "conversionName": "Cubic Metre",
+    "abbreviation": "m3",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "Cubic Centimetre",
+    "abbreviation": "cm3",
+    "rate":1000000
+  },
+
+  {
+    "id": 3,
+    "conversionName": "Cubic Decimetre",
+    "abbreviation": "dm3",
+    "rate": 1000
+  },
+
+  {
+    "id": 4,
+    "conversionName": "Cubic Inch",
+    "abbreviation": "inch3",
+    "rate": 61023.744
+  },
+
+  {
+    "id": 5,
+    "conversionName": "cubic Foot",
+    "abbreviation": "ft3",
+    "rate":35.315
+  },
+
+  {
+    "id": 6,
+    "conversionName": "Litre",
+    "abbreviation": "l",
+    "rate": 1000
+  },
+
+  {
+    "id": 7,
+    "conversionName": "gallon",
+    "abbreviation": "gal",
+    "rate": 264.172
+  },
+
+  {
+    "id": 8,
+    "conversionName": "Pint",
+    "abbreviation": "pt",
+    "rate":2113.376
+  },
+
+  {
+    "id": 9,
+    "conversionName": "Barrel",
+    "abbreviation": "bar",
+    "rate":6.29
+  }
+
+]
