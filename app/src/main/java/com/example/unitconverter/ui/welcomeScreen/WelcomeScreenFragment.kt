@@ -20,6 +20,8 @@ class WelcomeScreenFragment : Fragment() {
     private lateinit var conversionAdapter: WelcomeScreenConversionsAdapter
     private lateinit var items: List<ConversionItem>
     private lateinit var clickedConversionItem: ConversionItem
+    lateinit var johnson : String
+    lateinit var johnsons : List<String>
 
 
     override fun onCreateView(

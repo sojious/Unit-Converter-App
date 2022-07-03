@@ -45,6 +45,7 @@ class ConversionScreenFragment :
     private val args: ConversionScreenFragmentArgs? by navArgs()
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -80,6 +81,7 @@ class ConversionScreenFragment :
         lifecycleScope.launch {
             processSecondConversionBox()
         }
+
 
 
     }

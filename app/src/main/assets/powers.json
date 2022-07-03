@@ -1,0 +1,98 @@
+[{
+  "id": 1,
+  "conversionName": "watts",
+  "abbreviation": "W",
+  "rate": 1
+},
+
+{
+"id": 2,
+"conversionName": "exawatt",
+"abbreviation": "EW",
+"rate": 415.13
+},
+
+{
+"id": 3,
+"conversionName": "petawatt",
+"abbreviation": "PW",
+"rate": 1.25
+},
+
+{
+"id": 4,
+"conversionName": "terawatt",
+"abbreviation": "TW",
+"rate": 7.85
+},
+
+{
+"id": 5,
+"conversionName": "gigawatt",
+"abbreviation": "GW",
+"rate": 15.38
+},
+
+{
+"id": 6,
+"conversionName": "megawatt",
+"abbreviation": "MW",
+"rate": 0.79
+},
+
+{
+"id": 7,
+"conversionName": "Kilowatt",
+"abbreviation": "kW",
+"rate": 0.93
+},
+
+{
+"id": 8,
+"conversionName": "hectowatt",
+"abbreviation": "hW",
+"rate": 1.38
+},
+
+{
+"id": 9,
+"conversionName": "dekawatt",
+"abbreviation": "daW",
+"rate": 132.67
+},
+
+{
+"id": 10,
+"conversionName": "deciwatt",
+"abbreviation": "dW",
+"rate": 6.67
+},
+  {
+  "id": 11,
+  "conversionName": "centiwatt",
+  "abbreviation": "cW",
+  "rate": 6.67
+  },
+
+{
+"id": 12,
+"conversionName": "milliwatt",
+"abbreviation": "mW",
+"rate": 3.75
+},
+
+  {
+    "id": 13,
+    "conversionName": "microwatt",
+    "abbreviation": "uW",
+    "rate": 3.75
+  },
+
+  {
+    "id": 14,
+    "conversionName": "picowatt",
+    "abbreviation": "pW",
+    "rate": 3.75
+  }
+
+]

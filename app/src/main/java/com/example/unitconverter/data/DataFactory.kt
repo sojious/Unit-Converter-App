@@ -37,8 +37,8 @@ class DataFactory {
                     emptyList()
                 }
                 ConversionType.Power.name -> {
-                    //todo create the db as done for CurrencyDb
-                    emptyList()
+
+                    PowerDb.power(context)
                 }
                 ConversionType.Pressure.name -> {
                     //todo create the db as done for CurrencyDb
