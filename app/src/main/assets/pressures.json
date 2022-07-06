@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "conversionName": "pascal",
+    "abbreviation": "Pa",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "kilopascal",
+    "abbreviation": "kPa",
+    "rate": 0.001
+  },
+
+  {
+    "id": 3,
+    "conversionName": "bar",
+    "abbreviation": "",
+    "rate": 0.00001
+  },
+
+  {
+    "id": 4,
+    "conversionName": "psi",
+    "abbreviation": "psi",
+    "rate": 0.0001450377
+  },
+
+  {
+    "id": 5,
+    "conversionName": "ksi",
+    "abbreviation": "ksi",
+    "rate": 1.450377377E-7
+  },
+
+  {
+    "id": 6,
+    "conversionName": "Standard atmosphere",
+    "abbreviation": "atm",
+    "rate": 0.0000098692
+  },
+
+  {
+    "id": 7,
+    "conversionName": "megapascal",
+    "abbreviation": "MPa",
+    "rate": 0.000001
+  },
+
+  {
+    "id": 8,
+    "conversionName": "hectopascal",
+    "abbreviation": "hPa",
+    "rate": 0.01
+  },
+
+  {
+    "id": 9,
+    "conversionName": "dekapascal",
+    "abbreviation": "daPa",
+    "rate": 0.1
+  },
+
+  {
+    "id": 10,
+    "conversionName": "decipascal",
+    "abbreviation": "dPa",
+    "rate": 10
+  },
+
+  {
+    "id": 11,
+    "conversionName": "centipascal",
+    "abbreviation": "cPa",
+    "rate": 100
+  }
+]

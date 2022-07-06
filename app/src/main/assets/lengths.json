@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "conversionName": "meter",
+    "abbreviation": "m",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "kilometer",
+    "abbreviation": "km",
+    "rate": 0.001
+  },
+
+  {
+    "id": 3,
+    "conversionName": "decimeter",
+    "abbreviation": "dm",
+    "rate": 10
+  },
+
+  {
+    "id": 4,
+    "conversionName": "centimeter",
+    "abbreviation": "cm",
+    "rate": 100
+  },
+
+  {
+    "id": 5,
+    "conversionName": "millimeter",
+    "abbreviation": "mm",
+    "rate": 1000
+  },
+
+  {
+    "id": 6,
+    "conversionName": "micrometer",
+    "abbreviation": "um",
+    "rate": 1000000
+  },
+
+  {
+    "id": 7,
+    "conversionName": "nanometer",
+    "abbreviation": "nm",
+    "rate": 1000000000
+  },
+
+  {
+    "id": 8,
+    "conversionName": "mile",
+    "abbreviation": "mi",
+    "rate": 0.0006213712
+  },
+
+  {
+    "id": 9,
+    "conversionName": "yard",
+    "abbreviation": "yd",
+    "rate": 1.0936132983
+  },
+
+  {
+    "id": 10,
+    "conversionName": "foot",
+    "abbreviation": "ft",
+    "rate": 3.280839895
+  },
+
+  {
+    "id": 11,
+    "conversionName": "inch",
+    "abbreviation": "in",
+    "rate": 39.37007874
+  }
+]

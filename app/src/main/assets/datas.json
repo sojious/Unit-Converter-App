@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "conversionName": "bit",
+    "abbreviation": "b",
+    "rate": 1
+  },
+
+  {
+    "id": 2,
+    "conversionName": "nibble",
+    "abbreviation": "",
+    "rate": 0.25
+  },
+
+  {
+    "id": 3,
+    "conversionName": "byte",
+    "abbreviation": "B",
+    "rate": 0.125
+  },
+
+  {
+    "id": 4,
+    "conversionName": "kilobit",
+    "abbreviation": "kb",
+    "rate": 0.0009765625
+  },
+
+  {
+    "id": 5,
+    "conversionName": "kilobyte",
+    "abbreviation": "kB",
+    "rate": 0.0001220703
+  },
+
+  {
+    "id": 6,
+    "conversionName": "megabit",
+    "abbreviation": "Mb",
+    "rate": 9.536743164E-7
+  },
+
+  {
+    "id": 7,
+    "conversionName": "megabyte",
+    "abbreviation": "MB",
+    "rate": 1.192092895E-7
+  },
+
+  {
+    "id": 8,
+    "conversionName": "gigabit",
+    "abbreviation": "Gb",
+    "rate": 9.313225746E-10
+  },
+
+  {
+    "id": 9,
+    "conversionName": "gigabyte",
+    "abbreviation": "GB",
+    "rate": 1.1959900463
+  },
+
+  {
+    "id": 10,
+    "conversionName": "terabit",
+    "abbreviation": "Tb",
+    "rate": 9.094947017E-13
+  },
+
+  {
+    "id": 11,
+    "conversionName": "terabyte",
+    "abbreviation": "TB",
+    "rate": 1.136868377E-13
+  }
+]

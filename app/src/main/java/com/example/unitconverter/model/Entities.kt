@@ -85,5 +85,51 @@ data class Weight(
     override val rate: Double
 ) : Parcelable, ConversionUnit
 
-//TODO please add more data classes for the other conversion units, don't forget to implement the ConversionUnit and Parcelable interfaces as demoed with Currency
+@Parcelize
+data class Area(
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
+
+@Parcelize
+data class Power(
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
+
+@Parcelize
+data class Data (
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
+
+@Parcelize
+data class Length (
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
+
+@Parcelize
+data class Mileages(
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
+
+@Parcelize
+data class Pressures(
+    val id: Int,
+    override val conversionName: String,
+    val abbreviation: String,
+    override val rate: Double
+) : Parcelable, ConversionUnit
 

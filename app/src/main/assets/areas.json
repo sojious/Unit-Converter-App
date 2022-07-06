@@ -1,1 +1,78 @@
+[
+  {
+    "id": 1,
+    "conversionName": "square milimeter",
+    "abbreviation": "mm2",
+    "rate": 1000000
+  },
 
+  {
+    "id": 2,
+    "conversionName": "square micrometer",
+    "abbreviation": "um2",
+    "rate": 1000000000000
+  },
+
+  {
+    "id": 3,
+    "conversionName": "hectare",
+    "abbreviation": "ha",
+    "rate": 0.0001
+  },
+
+  {
+    "id": 4,
+    "conversionName": "acre",
+    "abbreviation": "ac",
+    "rate": 0.0002471054
+  },
+
+  {
+    "id": 5,
+    "conversionName": "Square Meter",
+    "abbreviation": "m2",
+    "rate": 15.38
+  },
+
+  {
+    "id": 6,
+    "conversionName": "Square Kilometer",
+    "abbreviation": "km2",
+    "rate": 0.000001
+  },
+
+  {
+    "id": 7,
+    "conversionName": "Square Centimeter",
+    "abbreviation": "cm2",
+    "rate": 10000
+  },
+
+  {
+    "id": 8,
+    "conversionName": "Square mile",
+    "abbreviation": "mi2",
+    "rate": 3.861021585E-7
+  },
+
+  {
+    "id": 9,
+    "conversionName": "Square yard",
+    "abbreviation": "yd2",
+    "rate": 1.1959900463
+  },
+
+  {
+    "id": 10,
+    "conversionName": "Square foot",
+    "abbreviation": "ft2",
+    "rate": 10.763910417
+  },
+
+  {
+    "id": 11,
+    "conversionName": "Square inch",
+    "abbreviation": "in2",
+    "rate": 1550.0031
+  }
+]
