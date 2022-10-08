@@ -1,2 +1,2 @@
 # Unit-Converter-App
-An App that helps convert unit
+An App that helps convert units
